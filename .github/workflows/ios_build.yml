@@ -39,8 +39,19 @@ jobs:
           pod install --repo-update
           cd ..
 
+      - name: Disable Code Signing in Xcode Project
+        run: |
+          cd ios
+          sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = "";/g' Runner.xcodeproj/project.pbxproj
+          sed -i '' 's/CODE_SIGN_IDENTITY = ".*"/CODE_SIGN_IDENTITY = ""/g' Runner.xcodeproj/project.pbxproj
+          sed -i '' 's/CODE_SIGN_IDENTITY = .*;/CODE_SIGN_IDENTITY = "";/g' Runner.xcodeproj/project.pbxproj
+          # Add CODE_SIGNING_REQUIRED = NO and CODE_SIGNING_ALLOWED = NO
+          sed -i '' 's/PRODUCT_BUNDLE_IDENTIFIER = .*/&\n\t\t\t\tCODE_SIGNING_REQUIRED = NO;\n\t\t\t\tCODE_SIGNING_ALLOWED = NO;/g' Runner.xcodeproj/project.pbxproj
+          cd ..
+
       - name: Build iOS No-Codesign
-        run: flutter build ios --release --no-codesign
+        run: |
+          flutter build ios --release --no-codesign
 
       - name: Zip iOS App Bundle
         run: |
