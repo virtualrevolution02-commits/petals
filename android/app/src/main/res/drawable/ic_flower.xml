@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder flower icon for widget -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFE8647A"
+        android:pathData="M12,22C9.79,22 8,18.42 8,14C8,12.9 8.09,11.84 8.25,10.85C7.2,11.29 6.28,11.5 5.5,11.5C3.29,11.5 2,9.71 2,7.5C2,5.29 3.29,3.5 5.5,3.5C6.28,3.5 7.2,3.71 8.25,4.15C8.09,3.16 8,2.1 8,1H9C9,3.21 9.57,5.22 10.5,6.44C10.95,5.44 11.46,4.77 12,4.77C12.54,4.77 13.05,5.44 13.5,6.44C14.43,5.22 15,3.21 15,1H16C16,2.1 15.91,3.16 15.75,4.15C16.8,3.71 17.72,3.5 18.5,3.5C20.71,3.5 22,5.29 22,7.5C22,9.71 20.71,11.5 18.5,11.5C17.72,11.5 16.8,11.29 15.75,10.85C15.91,11.84 16,12.9 16,14C16,18.42 14.21,22 12,22Z" />
+</vector>

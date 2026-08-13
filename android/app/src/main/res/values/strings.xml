@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Petals</string>
+
+    <!-- Widget labels (shown in widget picker) -->
+    <string name="widget_small_label">Petals · Moment (Small)</string>
+    <string name="widget_medium_label">Petals · Moment (Medium)</string>
+    <string name="widget_large_label">Petals · Moment (Large)</string>
+    <string name="widget_compact_label">Petals · Moment (Compact)</string>
+
+    <!-- Widget descriptions -->
+    <string name="widget_small_description">Shows your partner\'s latest photo</string>
+    <string name="widget_medium_description">Shows photo + caption from your partner</string>
+    <string name="widget_large_description">Full moment card with photo, caption, and time</string>
+    <string name="widget_compact_description">Compact banner strip with thumbnail and text</string>
+</resources>

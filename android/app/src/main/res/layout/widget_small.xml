@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget Type 1: Small Square 2x2 — photo/status widget -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/widget_bg_rounded">
+
+    <ImageView
+        android:id="@+id/widget_small_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/widget_placeholder" />
+
+    <!-- Gradient overlay -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/widget_gradient_bottom" />
+
+    <!-- Small caption / status text -->
+    <TextView
+        android:id="@+id/widget_small_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="Connected 💕"
+        android:textColor="#FFFFFFFF"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</RelativeLayout>

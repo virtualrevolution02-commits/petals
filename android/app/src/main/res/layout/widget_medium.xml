@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget Type 2: Medium 2x4 — photo + caption -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/widget_bg_rounded">
+
+    <ImageView
+        android:id="@+id/widget_medium_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/widget_placeholder" />
+
+    <!-- Dark gradient overlay at bottom -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/widget_gradient_bottom" />
+
+    <!-- Caption text -->
+    <TextView
+        android:id="@+id/widget_medium_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="A beautiful moment 🌸"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Posted by -->
+    <TextView
+        android:id="@+id/widget_medium_poster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="from Partner"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif" />
+
+</RelativeLayout>

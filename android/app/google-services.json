@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "147657058804",
+    "project_id": "petals-dairy",
+    "storage_bucket": "petals-dairy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147657058804:android:162e1a1c601f2b8a3331a1",
+        "android_client_info": {
+          "package_name": "com.bharathi.petals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147657058804-6qondhldjn1k0lp8u0rfmidmju4oaipl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bharathi.petals",
+            "certificate_hash": "9cb61e0f133c63f7edad6c2d613061ae4de116b5"
+          }
+        },
+        {
+          "client_id": "147657058804-4vooos145unra9f7cpsae0m55crfus30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjCPaDRr5BUBYUlouIYt9ss7ScpzEHNQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147657058804-4vooos145unra9f7cpsae0m55crfus30.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
