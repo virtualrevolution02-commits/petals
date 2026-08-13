@@ -9,11 +9,14 @@ on:
 
 jobs:
   build-ios:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Select Xcode 16
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
 
       - name: Set up Java JDK
         uses: actions/setup-java@v4
@@ -33,10 +36,10 @@ jobs:
       - name: CocoaPods Install
         run: |
           cd ios
-          pod install
+          pod install --repo-update
           cd ..
 
-      - name: Build iOS No-Codesign (.app for Simulator / Cloud Test)
+      - name: Build iOS No-Codesign
         run: flutter build ios --release --no-codesign
 
       - name: Zip iOS App Bundle
