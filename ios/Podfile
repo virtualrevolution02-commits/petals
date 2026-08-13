@@ -1,7 +1,6 @@
 # CocoaPods Podfile for Petals iOS
 platform :ios, '13.0'
 
-# CocoaPods analytics sends network stats which can slow down build
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
@@ -31,8 +30,11 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  flutter_install_ios_engine_pod __FILE__
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
 end
 
 post_install do |installer|
