@@ -18,8 +18,11 @@ workflows:
           cd ios && pod install
       - name: Build iOS IPA
         script: |
-          # Use '--no-codesign' for unsigned build. Remove '--no-codesign' if Code Signing is set up in Codemagic.
-          flutter build ipa --release --no-codesign
+          flutter build ios --release --no-codesign
+          mkdir -p build/ios/ipa/Payload
+          cp -r build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
+          cd build/ios/ipa
+          zip -r petals_unsigned.ipa Payload
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/archive/*.xcarchive
