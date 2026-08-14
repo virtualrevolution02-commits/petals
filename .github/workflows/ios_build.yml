@@ -27,8 +27,10 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Disable Swift Package Manager
-        run: flutter config --no-enable-swift-package-manager
+      - name: Disable Swift Package Manager & Clean
+        run: |
+          flutter config --no-enable-swift-package-manager
+          flutter clean
 
       - name: Flutter Pub Get
         run: flutter pub get
@@ -40,12 +42,19 @@ jobs:
           cd ..
 
       - name: Build iOS App (No Codesign)
-        run: flutter build ios --release --no-codesign
+        run: |
+          flutter build ios --release --no-codesign
 
       - name: Create Sideloadable IPA Package
         run: |
           mkdir -p build/ios/iphoneos/Payload
-          cp -r build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/
+          APP_PATH=$(find build/ios -name "Runner.app" -type d | head -1)
+          echo "Found app at: $APP_PATH"
+          if [ -z "$APP_PATH" ]; then
+            echo "ERROR: Runner.app not found!"
+            exit 1
+          fi
+          cp -r "$APP_PATH" build/ios/iphoneos/Payload/
           cd build/ios/iphoneos
           zip -r "${GITHUB_WORKSPACE}/Petals_iOS_App.ipa" Payload
           ls -lh "${GITHUB_WORKSPACE}/Petals_iOS_App.ipa"
